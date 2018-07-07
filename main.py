@@ -2,6 +2,8 @@ from __future__ import print_function
 from mailmerge import MailMerge
 from datetime import date
 import csv
+import tkinter  
+
 
 # populates fields -- needs to change if columns in csv change
 def populateDocMerge(document, row):
