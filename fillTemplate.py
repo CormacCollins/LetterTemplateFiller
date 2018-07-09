@@ -3,6 +3,7 @@ from mailmerge import MailMerge
 from datetime import date
 import csv
 import tkinter  
+import sys
 
 
 # populates fields -- needs to change if columns in csv change
@@ -45,6 +46,10 @@ document = MailMerge(template)
 print("Fields:")
 fields_set = document.get_merge_fields()
 print(fields_set)
+
+# get cmd args
+argv = sys.argv
+
 
 gpName = input()
 
