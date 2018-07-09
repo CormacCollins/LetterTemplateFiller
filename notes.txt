@@ -1,5 +1,0 @@
-Plan:
-Gui for easy entry of fields in a row
-1.) obtain the relevant fields: GP surname & clinic, client name & birthdate
-2.) Search excel for row corresponding to GP
-3.) Populate letter template

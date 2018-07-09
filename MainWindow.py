@@ -29,7 +29,7 @@ class MyFirstGUI:
                 if self.allFieldsFull():
                     print("Filling template")
                     print(entryDictionary)
-                    out = call(["python", "fillTemplate.py", str(entryDictionary['doctor_surname']), str(entryDictionary['doctor_surgery']), str(entryDictionary['patient_first_name']), str(entryDictionary['patient_surname']), str(entryDictionary['patient_DOB'])])
+                    out = call(["python", "fillTemplate.py", str(entryDictionary['doctor_surname']), str(entryDictionary['doctor_surgery']), str(entryDictionary['patient_title']),  str(entryDictionary['patient_first_name']), str(entryDictionary['patient_surname']), str(entryDictionary['patient_DOB'])])
                     print(out)
 
     # for putting cursor back to original spot when user returns to window
@@ -52,6 +52,7 @@ class MyFirstGUI:
         self.labels = list()  
         self.entries = {}       
         self.master = master
+        self.master.title = "Fill it out boi..."
 
         self.label = Label(master, text="Template filler", anchor="e").grid(row=0, columnspan=1, sticky="ew")
         self.currentRow += 1
@@ -59,6 +60,7 @@ class MyFirstGUI:
         #add a 1.) entry 2.)field - the field corresponds to the word field names 
         self.addEntryAndLabel("GP surname", "doctor_surname")
         self.addEntryAndLabel("GP surgury", "doctor_surgery")
+        self.addEntryAndLabel("Patient title", "patient_title")
         self.addEntryAndLabel("patient first name", "patient_first_name")
         self.addEntryAndLabel("patient surname", "patient_surname")
         self.addEntryAndLabel("patient DOB", "patient_DOB")
@@ -91,6 +93,7 @@ class MyFirstGUI:
 
 
 root = Tk()
+root.iconbitmap(default='')
 root.config(background="#a1dbcd")
 my_gui = MyFirstGUI(root)
 root.mainloop()
