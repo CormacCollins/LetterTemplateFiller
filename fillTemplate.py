@@ -49,17 +49,25 @@ print(fields_set)
 
 # get cmd args
 argv = sys.argv
-
-
-gpName = input()
+gpSurname = argv[1]
+gpSurgery = argv[2]
+ptFirstName = argv[3]
+ptSurname = argv[4]
+patientDOB = argv[5]
 
 gpList = getGPList(gpListFile)
-gpInfo = findGP(gpName, gpList)
+gpInfo = findGP(gpSurname, gpList)
+
+print("ARGS, GP LIST AND GP INFO")
+print(argv)
+print(gpList)
+print(gpInfo)
 
 if gpInfo is not None:
     populateDocMerge(document, gpInfo)
     try:
         document.write('test-output.docx')
+        print("Document write complete")
     
     except:
         print("Unable to open file")
